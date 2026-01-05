@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dava Samjho - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js" type="module"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">Dava Samjho Admin</div>
+            <a href="index.html" class="text-white hover:text-blue-200">
+                <i class="fas fa-home"></i> View Site
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-semibold mb-4">Admin Menu</h2>
+                    <ul class="space-y-2">
+                        <li>
+                            <button id="view-products-btn" class="w-full text-left px-4 py-2 bg-blue-100 text-blue-700 rounded-md font-medium">
+                                <i class="fas fa-boxes mr-2"></i> View Products
+                            </button>
+                        </li>
+                        <li>
+                            <button id="add-product-btn" class="w-full text-left px-4 py-2 hover:bg-gray-100 rounded-md">
+                                <i class="fas fa-plus-circle mr-2"></i> Add New Product
+                            </button>
+                        </li>
+                        <li>
+                            <button id="view-orders-btn" class="w-full text-left px-4 py-2 hover:bg-gray-100 rounded-md">
+                                <i class="fas fa-shopping-cart mr-2"></i> View Orders
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <!-- Products List -->
+                <div id="products-section" class="bg-white rounded-lg shadow p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-semibold">Product Inventory</h2>
+                        <button id="add-new-product" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                            <i class="fas fa-plus mr-2"></i>Add Product
+                        </button>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="py-2 px-4 text-left">Product</th>
+                                    <th class="py-2 px-4 text-left">Category</th>
+                                    <th class="py-2 px-4 text-right">Price (₹)</th>
+                                    <th class="py-2 px-4 text-right">Stock</th>
+                                    <th class="py-2 px-4 text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-list">
+                                <!-- Products will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Add/Edit Product Form (Hidden by default) -->
+                <div id="product-form-section" class="bg-white rounded-lg shadow p-6 hidden">
+                    <h2 class="text-2xl font-semibold mb-6" id="form-title">Add New Product</h2>
+                    <form id="product-form" class="space-y-4">
+                        <input type="hidden" id="product-id">
+                        
+                        <div>
+                            <label for="product-name" class="block text-sm font-medium text-gray-700">Product Name</label>
+                            <input type="text" id="product-name" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="product-price" class="block text-sm font-medium text-gray-700">Price (₹)</label>
+                                <input type="number" id="product-price" step="0.01" min="0" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="product-stock" class="block text-sm font-medium text-gray-700">Stock</label>
+                                <input type="number" id="product-stock" min="0" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="product-category" class="block text-sm font-medium text-gray-700">Category</label>
+                            <select id="product-category" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                <option value="">Select a category</option>
+                                <option value="bp-monitor">BP Monitor</option>
+                                <option value="glucometer">Glucometer</option>
+                                <option value="nebulizer">Nebulizer</option>
+                                <option value="thermometer">Thermometer</option>
+                                <option value="surgical">Surgical Instruments</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="product-description" class="block text-sm font-medium text-gray-700">Description</label>
+                            <textarea id="product-description" rows="3"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="product-image" class="block text-sm font-medium text-gray-700">Image URL</label>
+                            <input type="url" id="product-image"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                                placeholder="https://example.com/image.jpg">
+                        </div>
+                        
+                        <div class="flex justify-end space-x-3 pt-4">
+                            <button type="button" id="cancel-edit" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Cancel
+                            </button>
+                            <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
+                                Save Product
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-script.js" type="module"></script>
+</body>
+</html>

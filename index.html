@@ -165,49 +165,35 @@
     <section id="products" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Surgical Instruments & Medical Supplies</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="https://via.placeholder.com/400x300?text=BP+Monitor" alt="BP Monitor" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Digital BP Monitor</h3>
-                        <p class="text-gray-600 mb-4">Accurate and easy-to-use digital blood pressure monitor for home use.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold">₹1,299</span>
-                            <a href="https://wa.me/919876543210?text=Hello%20Dava%20Samjho,%20I%20want%20to%20order:%0AProduct:%20BP%20Monitor%0AQty:%201%0AAddress:%20%5BYour%20Address%5D" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors">
-                                Order on WhatsApp
-                            </a>
-                        </div>
+            <div id="products-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Products will be loaded here dynamically -->
+                <div class="text-center py-8">
+                    <div class="animate-pulse">
+                        <div class="h-48 bg-gray-200 rounded-md mb-4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mx-auto mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
+                        <div class="h-10 bg-gray-200 rounded w-3/4 mx-auto"></div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="https://via.placeholder.com/400x300?text=Sugar+Testing+Machine" alt="Sugar Testing Machine" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Glucose Meter</h3>
-                        <p class="text-gray-600 mb-4">Portable blood glucose monitoring system with test strips.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold">₹899</span>
-                            <a href="https://wa.me/919876543210?text=Hello%20Dava%20Samjho,%20I%20want%20to%20order:%0AProduct:%20Glucose%20Meter%0AQty:%201%0AAddress:%20%5BYour%20Address%5D" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors">
-                                Order on WhatsApp
-                            </a>
-                        </div>
+                <div class="text-center py-8">
+                    <div class="animate-pulse">
+                        <div class="h-48 bg-gray-200 rounded-md mb-4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mx-auto mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
+                        <div class="h-10 bg-gray-200 rounded w-3/4 mx-auto"></div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="https://via.placeholder.com/400x300?text=Nebulizer" alt="Nebulizer" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Compressor Nebulizer</h3>
-                        <p class="text-gray-600 mb-4">Efficient and quiet nebulizer for respiratory therapy at home.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold">₹2,499</span>
-                            <a href="https://wa.me/919876543210?text=Hello%20Dava%20Samjho,%20I%20want%20to%20order:%0AProduct:%20Nebulizer%0AQty:%201%0AAddress:%20%5BYour%20Address%5D" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors">
-                                Order on WhatsApp
-                            </a>
-                        </div>
+                <div class="text-center py-8">
+                    <div class="animate-pulse">
+                        <div class="h-48 bg-gray-200 rounded-md mb-4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mx-auto mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
+                        <div class="h-10 bg-gray-200 rounded w-3/4 mx-auto"></div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-10">
-                <a href="#" class="text-blue-600 font-semibold hover:underline">View All Products →</a>
+                <a href="#contact" class="text-blue-600 font-semibold hover:underline">Contact us for more products →</a>
             </div>
         </div>
     </section>
@@ -325,7 +311,9 @@
     <a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition-colors">
         <i class="fab fa-whatsapp"></i>
     </a>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="load-products.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

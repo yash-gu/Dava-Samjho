@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dava Samjho - Your Medicine Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">Dava Samjho</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#services" class="hover:text-blue-200">Services</a>
+                <a href="#products" class="hover:text-blue-200">Products</a>
+                <a href="#how-it-works" class="hover:text-blue-200">How It Works</a>
+                <a href="#contact" class="hover:text-blue-200">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#services" class="block px-3 py-2 hover:bg-blue-700 rounded-md">Services</a>
+                <a href="#products" class="block px-3 py-2 hover:bg-blue-700 rounded-md">Products</a>
+                <a href="#how-it-works" class="block px-3 py-2 hover:bg-blue-700 rounded-md">How It Works</a>
+                <a href="#contact" class="block px-3 py-2 hover:bg-blue-700 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Understand Your Medicines Better</h1>
+            <p class="text-xl mb-8">Get expert explanation of your prescriptions for just ₹50</p>
+            <a href="#upload-prescription" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">
+                Upload Prescription
+            </a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                    <div class="text-blue-500 text-4xl mb-4">💊</div>
+                    <h3 class="text-xl font-semibold mb-2">Medicine Explanation</h3>
+                    <p>Understand what each medicine is for and how to take it properly.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                    <div class="text-blue-500 text-4xl mb-4">📄</div>
+                    <h3 class="text-xl font-semibold mb-2">Prescription Review</h3>
+                    <p>Upload your prescription and get it explained by our experts.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                    <div class="text-blue-500 text-4xl mb-4">🔄</div>
+                    <h3 class="text-xl font-semibold mb-2">Substitute Info</h3>
+                    <p>Information about alternative medicines if your prescribed ones aren't available.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                    <div class="text-blue-500 text-4xl mb-4">⚠️</div>
+                    <h3 class="text-xl font-semibold mb-2">Side Effects</h3>
+                    <p>Learn about potential side effects of your medications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row mb-8 items-center">
+                    <div class="md:w-1/4 text-5xl text-blue-500 mb-4 md:mb-0 text-center">1</div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-semibold mb-2">Upload Prescription</h3>
+                        <p>Take a clear photo of your prescription or upload the image from your device.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row mb-8 items-center">
+                    <div class="md:w-1/4 text-5xl text-blue-500 mb-4 md:mb-0 text-center">2</div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-semibold mb-2">Schedule Appointment</h3>
+                        <p>Choose a convenient time for your consultation via WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row mb-8 items-center">
+                    <div class="md:w-1/4 text-5xl text-blue-500 mb-4 md:mb-0 text-center">3</div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-semibold mb-2">Pay ₹50</h3>
+                        <p>Complete the payment securely via UPI (GPay/PhonePe/Paytm).</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/4 text-5xl text-blue-500 mb-4 md:mb-0 text-center">4</div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-semibold mb-2">Get Explanation</h3>
+                        <p>Receive detailed explanation of your prescription at the scheduled time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prescription Upload Section -->
+    <section id="upload-prescription" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center mb-8">Upload Your Prescription</h2>
+                <form id="prescription-form">
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="prescription">
+                            Prescription (JPG, PNG, PDF - Max 3 pages)
+                        </label>
+                        <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                            <div class="space-y-1 text-center">
+                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <div class="flex text-sm text-gray-600">
+                                    <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none">
+                                        <span>Upload a file</span>
+                                        <input id="file-upload" name="file-upload" type="file" class="sr-only" accept="image/*,.pdf" multiple>
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs text-gray-500">JPG, PNG, PDF up to 3 pages</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="whatsapp">
+                            WhatsApp Number
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="whatsapp" type="tel" placeholder="+91XXXXXXXXXX" required>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="appointment-date">
+                            Preferred Date & Time
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="appointment-date" type="datetime-local" required>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline w-full" type="submit">
+                            Pay ₹50 & Book Appointment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Surgical Instruments & Medical Supplies</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://via.placeholder.com/400x300?text=BP+Monitor" alt="BP Monitor" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Digital BP Monitor</h3>
+                        <p class="text-gray-600 mb-4">Accurate and easy-to-use digital blood pressure monitor for home use.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">₹1,299</span>
+                            <a href="https://wa.me/919876543210?text=Hello%20Dava%20Samjho,%20I%20want%20to%20order:%0AProduct:%20BP%20Monitor%0AQty:%201%0AAddress:%20%5BYour%20Address%5D" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors">
+                                Order on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://via.placeholder.com/400x300?text=Sugar+Testing+Machine" alt="Sugar Testing Machine" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Glucose Meter</h3>
+                        <p class="text-gray-600 mb-4">Portable blood glucose monitoring system with test strips.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">₹899</span>
+                            <a href="https://wa.me/919876543210?text=Hello%20Dava%20Samjho,%20I%20want%20to%20order:%0AProduct:%20Glucose%20Meter%0AQty:%201%0AAddress:%20%5BYour%20Address%5D" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors">
+                                Order on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://via.placeholder.com/400x300?text=Nebulizer" alt="Nebulizer" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Compressor Nebulizer</h3>
+                        <p class="text-gray-600 mb-4">Efficient and quiet nebulizer for respiratory therapy at home.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">₹2,499</span>
+                            <a href="https://wa.me/919876543210?text=Hello%20Dava%20Samjho,%20I%20want%20to%20order:%0AProduct:%20Nebulizer%0AQty:%201%0AAddress:%20%5BYour%20Address%5D" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors">
+                                Order on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="text-blue-600 font-semibold hover:underline">View All Products →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="bg-yellow-50 py-8 px-4">
+        <div class="container mx-auto">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-yellow-700">
+                            <strong>Disclaimer:</strong> Dava Samjho provides explanation services for medical prescriptions only. This service is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+                    <p class="mb-4">Have questions about our services or products? Reach out to us!</p>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-phone-alt text-blue-500 mr-3"></i>
+                        <a href="tel:+919876543210" class="hover:text-blue-600">+91 98765 43210</a>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-whatsapp text-green-500 mr-3"></i>
+                        <a href="https://wa.me/919876543210" class="hover:text-blue-600" target="_blank">Chat on WhatsApp</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-blue-500 mr-3"></i>
+                        <a href="mailto:info@davasamjho.com" class="hover:text-blue-600">info@davasamjho.com</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Visit Us</h3>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i> Sarvodaya Medical Shop</p>
+                        <p class="mb-4">Opposite to Sawai Man Singh Hospital, Jaipur, Rajasthan 302004</p>
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.1100000000004!2d75.812!3d26.8956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDUzJzQ0LjIiTiA3NcKwNDgnNDMuMiJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Dava Samjho</h3>
+                    <p class="text-gray-400">Your trusted partner for understanding medicines and medical supplies.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">💊 Medicine Explanation</li>
+                        <li class="text-gray-400">📄 Prescription Review</li>
+                        <li class="text-gray-400">🔄 Substitute Info</li>
+                        <li class="text-gray-400">⚠️ Side Effects</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-400">Subscribe to our newsletter</p>
+                        <div class="flex mt-2">
+                            <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l-md text-gray-800 w-full">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r-md">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Dava Samjho. All rights reserved.</p>
+                <div class="mt-2">
+                    <a href="#" class="hover:text-white mx-2">Privacy Policy</a>
+                    <a href="#" class="hover:text-white mx-2">Terms of Service</a>
+                    <a href="#" class="hover:text-white mx-2">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition-colors">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
